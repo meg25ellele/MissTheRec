@@ -34,10 +34,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private int x_accele = 0;
     private int y_accele = 0;
 
-    private int targetX;
-    private int targetY;
-
-
 
     public GameView(Context context, SensorManager sensorManager) {
         super(context);
@@ -164,7 +160,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         super.draw(canvas);
 
         if(canvas!=null) {
-
 
             canvas.drawColor(Color.WHITE);
             ball.draw(canvas);

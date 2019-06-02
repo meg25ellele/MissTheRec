@@ -4,29 +4,29 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 
-public class Ball {
+class Ball {
 
     private Bitmap image;
     private int x,y;
 
-    public boolean lost =false;
-    public boolean hit = false;
+    boolean lost =false;
+    boolean hit = false;
 
 
     private int screenWith = Resources.getSystem().getDisplayMetrics().widthPixels;
     private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
 
-    public Ball(Bitmap bitmap){
+    Ball(Bitmap bitmap){
         image=bitmap;
         x=screenWith-image.getWidth();
         y=screenHeight-image.getHeight();
     }
 
-    public void draw(Canvas canvas){
+    void draw(Canvas canvas){
         canvas.drawBitmap(image,x,y,null);
 
     }
-    public void update(int x_accele, int y_accele){
+    void update(int x_accele, int y_accele){
 
         x-=x_accele;
         y+=y_accele;
@@ -55,7 +55,7 @@ public class Ball {
 
     private void checkHit(){
 
-        int resize = 10;
+        int resize = 15;
 
 
         int ballXend = x + 100;
